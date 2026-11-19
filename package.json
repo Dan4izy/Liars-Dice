@@ -1,0 +1,17 @@
+{
+  "name": "liars-dice",
+  "private": true,
+  "packageManager": "pnpm@10.32.1",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "test": "pnpm --filter @liars-dice/game-rules test",
+    "typecheck": "pnpm -r typecheck",
+    "build": "pnpm -r build",
+    "migrate": "pnpm --filter @liars-dice/server migrate",
+    "dev": "node apps/web/node_modules/vite/bin/vite.js build apps/web && node --env-file-if-exists=.env apps/server/src/index.ts",
+    "start": "pnpm --filter @liars-dice/server start",
+    "test:auth": "pnpm --filter @liars-dice/web exec playwright test"
+  }
+}
